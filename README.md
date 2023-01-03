@@ -3,7 +3,7 @@
 - homework
 - python project
 - Command and Control simulation through Github Gists comments (with one controller and 3 bots named "Peter", "Martin" and "Lucas")
-- using unicode steganography to encode commands into text based comments
+- using unicode steganography to encode commands and their outputs into text based comments
 
 ## Install requirements
 - python 3.10 or newer
