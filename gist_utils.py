@@ -3,12 +3,7 @@ import pyUnicodeSteganography as us
 
 
 gistApiUrl = "https://api.github.com/gists"
-gistToken = "your_github_access_token"
-gistHeaders = {
-    "Accept": "application/vnd.github+json",
-    "Authorization": f"Bearer {gistToken}",
-    "X-GitHub-Api-Version": "2022-11-28"
-}
+gistHeaders = None
 gistPostData = {
     "description": "William Shakespeare enthusiasts",
     "public": False,
@@ -18,6 +13,15 @@ gistPostData = {
         }
     }
 }
+
+
+def initializeGistHeaders(token):
+    global gistHeaders
+    gistHeaders = {
+        "Accept": "application/vnd.github+json",
+        "Authorization": f"Bearer {token}",
+        "X-GitHub-Api-Version": "2022-11-28"
+    }
 
 
 # creates a new gist and returns its URL
