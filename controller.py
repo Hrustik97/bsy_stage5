@@ -4,7 +4,11 @@ import gist_utils
 from threading import Thread
 from apscheduler.schedulers.background import BackgroundScheduler
 import socket
-import os, signal, atexit
+import os, signal, atexit, sys
+
+
+GIST_TOKEN = sys.argv[1]
+gist_utils.initializeGistHeaders(GIST_TOKEN)
 
 
 # Starting 3 bots as TCP servers running on separate threads on the localhost address.
@@ -67,7 +71,7 @@ supportedCommandsCovers["file"] = "{0}, could you please tell us something about
 # new comments in the gist for both the controller and each individual bot.
 
 GIST_URL = gist_utils.createGist()
-print(GIST_URL)
+print(f"Gist created: {GIST_URL}")
 
 def checkNewGistComments(gistUrl : str) -> None:
     global controllerTurn
