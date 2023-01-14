@@ -12,5 +12,5 @@
 
 ## How to run
 ```
-python3 controller.py
+python3 controller.py <your_github_access_token>
 ```
